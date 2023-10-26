@@ -1,0 +1,51 @@
+<!-- /* //Assignment: Assignment 2 Express Portfolio – Authentication 
+// Laura Amangeldiyeva - student id: 301167661 
+// Date: 2022/02/15 */ -->
+
+<!--to add header-->
+ <%- include ../partials/header.ejs%>
+ <!--to add main nav-->
+  <%- include ../partials/main_nav.ejs%>
+
+  <!--update page info-->
+<div class= "container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Contact's Name</label>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Please, enter the Contact Name" name="name" value="<%= contacts.name %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="numberTextField">Contact's Number</label>
+            <input type="text" class="form=control" id="numberTextField" placeholder="Please, enter the Contact's Number" name="number" value="<%= contacts.number %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="emailTextField">Contact's Email</label>
+            <input type="text" class="form=control" id="emailTextField" placeholder="Please, enter the Contact's Email" name="email" value="<%= contacts.email %>" required>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">
+            <i class="fas fa-edit"></i> Submit</button>
+
+            <a href="/contacts-list" class ="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel</a>
+
+            <a href="/contacts-list/delete/<%= contacts._id %>" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i> Delete</a>
+        
+            </form>
+        </div>
+    </div>
+</div>    
+
+  <!--to add bottom nav-->
+ <%- include ../partials/bottom_nav.ejs%>
+ <!--to add footer-->
+  <%- include ../partials/footer.ejs%>
+ 

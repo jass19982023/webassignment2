@@ -1,0 +1,81 @@
+<!-- /* //Assignment: Assignment 2 Express Portfolio – Authentication 
+// Laura Amangeldiyeva - student id: 301167661 
+// Date: 2022/02/15 */ -->
+
+ <!--Main Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#cbcc8a">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="Assets/images/logo.png" alt="" width="60" height="54" class="d-inline-block align-text-center">
+      Laura Amangeldiyeva</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+        
+        <!--Home page Nav-->
+          <li class="nav-item">
+           <% if (title == "Home" || title=="/"){ %>
+          <a class="nav-link active" aria-current="page" href="/home"><i class="fas fa-laptop-house"></i> Home </a>      
+          <% } else { %>
+          <a class="nav-link" aria-current="page" href="/home"><i class="fas fa-laptop-house"></i> Home </a>
+          <%} %>
+          </li>
+
+          <!--About Me page Nav-->
+          <li class="nav-item">
+           <% if (title == "About Me"){ %>
+            <a class="nav-link active" aria-current="page" href="/about"><i class="fas fa-info-circle"></i> About Me </a>
+             <% } else { %>
+             <a class="nav-link" aria-current="page" href="/about"><i class="fas fa-info-circle"></i> About Me </a>
+             <%} %>
+          </li>
+
+          <!--Services page Nav-->
+          <li class="nav-item">
+          <% if (title == "Services"){ %>
+            <a class="nav-link active" aria-current="page" href="/services"><i class="fas fa-cogs"></i> Services </a>
+            <% } else { %>
+            <a class="nav-link" aria-current="page" href="/services"><i class="fas fa-cogs"></i> Services </a>
+            <%} %>
+          </li>
+
+          <!--Projects page Nav-->
+          <li class="nav-item">
+           <% if (title == "Projects"){ %>
+            <a class="nav-link active" aria-current="page" href="/projects"><i class="fab fa-elementor"></i> Projects </a>
+             <% } else { %>
+             <a class="nav-link" aria-current="page" href="/projects"><i class="fab fa-elementor"></i> Projects </a>
+            <%} %>
+          </li>
+
+           <!--Contact Me page Nav-->
+          <li class="nav-item">
+           <% if (title == "Contact List"){ %>
+            <a class="nav-link active" aria-current="page" href="/contacts-list"><i class="far fa-address-book"></i> Contact List </a>
+             <% } else { %>
+             <a class="nav-link" aria-current="page" href="/contacts-list"><i class="far fa-address-book"></i> Contact List </a>
+            <%} %>
+          </li>
+
+
+          <!--Contact Me page Nav-->
+          <li class="nav-item">
+          <% if (title == "Contact Me"){ %>
+            <a class="nav-link active" aria-current="page" href="/contact"><i class="fas fa-mobile-alt"></i> Contact Me </a>
+            <% } else { %>
+            <a class="nav-link" aria-current="page" href="/contact"><i class="fas fa-mobile-alt"></i> Contact Me </a>
+             <%} %>
+          </li>
+
+           <% if (typeof displayName == 'string' && displayName) { %>
+            <li class = "navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link"><i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+           <% } else { %>
+            <li class="nav-item"><a href="/login" class= "nav-link"><i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+
+           <% } %>
+          
+          
+    </div>
+  </nav>

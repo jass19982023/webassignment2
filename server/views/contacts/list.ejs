@@ -1,0 +1,56 @@
+<!-- /* //Assignment: Assignment 2 Express Portfolio – Authentication 
+// Laura Amangeldiyeva - student id: 301167661 
+// Date: 2022/02/15 */ -->
+
+<!--to add header-->
+ <%- include ../partials/header.ejs%>
+ <!--to add main nav-->
+  <%- include ../partials/main_nav.ejs%>
+
+  <main class = "container">
+     <div class ="row">
+      <div class = "col-md-offset-3 col-md-8">
+        <h1><%= title %></h1>
+        <br>
+        <table class="table table-bordered table-striped table-hover">
+         <!--header row-->
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Number</th>
+            <th class="text-center">Email</th>  
+          </tr>  
+
+       <!--repeatable template-->
+          <% for(let count = 0; count < ContactsList.length; count++) { %>
+          <tr>
+              <td class="text-center"><%= ContactsList[count].name %></td>
+              <td class="text-center"><%= ContactsList[count].number %></td>
+              <td class="text-center"><%= ContactsList[count].email %></td>
+              <td class="text-center">
+                <a href="/contacts-list/update/<%= ContactsList[count]._id %>" class="btn btn-primary btn-sm">
+                <i class="fas fa-pencil-alt"></i> Update</a>
+              </td>
+              <td class="text-center">
+                <a href="/contacts-list/delete/<%= ContactsList[count]._id %>" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i> Delete</a>
+
+            </td>
+
+              
+
+          </tr>
+          
+          <% } %>
+        </table>
+      </div>
+
+    </div>
+    </main>
+     
+   
+ <!--to add bottom nav-->
+ <%- include ../partials/bottom_nav.ejs%>
+ <!--to add footer-->
+  <%- include ../partials/footer.ejs%>
+
+ 
